@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: mysql | Hedgehog's Blog]]></title>
+  <link href="http://hedgehogZDH.github.io/categories/mysql/atom.xml" rel="self"/>
+  <link href="http://hedgehogZDH.github.io/"/>
+  <updated>2013-05-01T16:44:11+08:00</updated>
+  <id>http://hedgehogZDH.github.io/</id>
+  <author>
+    <name><![CDATA[Zoey]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[解决mysql中文乱码问题]]></title>
+    <link href="http://hedgehogZDH.github.io/blog/2013/04/29/little-sheep-sheep/"/>
+    <updated>2013-04-29T18:16:00+08:00</updated>
+    <id>http://hedgehogZDH.github.io/blog/2013/04/29/little-sheep-sheep</id>
+    <content type="html"><![CDATA[<h2>问题描述</h2>
+
+
+<p>Play框架内置的数据库是h2数据库，由于个人喜好问题，我换成了mysql数据库，可参考官方文档 Importing a Database Driver 。换用数据库后最大的问题就是--mysql中文乱码问题。</p>
+
+
+<!-- more -->
+
+
+<p>换用mysql数据库后，在表单是提交不了中文字符的数据的，还会产生乱码 “？？？”。</p>
+
+
+<p>在mysql命令行工具中键入 $ \show variables like "%character%"; 可以得到mysql character 的数据。</p>
+
+
+<p>
+    但是在mysql workbench是可以插进中文字符的，键入上述命令，里面有一个结果是character_set_client utf8,所以呢，从客户端是可以插入中文字符的。
+但是character_set_server和database是latin1，这就是中文乱码的根本原因了，从play程序提交数据保存到mysql，是直接提交数据到server的，所以显示出来的就是 万恶的latin1编码 “？？？” 了.
+</p>
+
+
+<h2>解决方法</h2>
+
+
+<p>网上很多解决类似问题的都是：</p>
+
+
+<ul>
+<li>首先，编辑mysql配置文件:sudo gedit /etc/mysql/my.cnf (这个文件是只读的，所以前面要加权限才能编辑)</li>
+<li>然后，找到[mysql]加入 default-character-set=utf8（设置字符集为utf8）,找到[mysqld] 加入 default-character-set=utf8 和 init_connect='SET NAMES utf8'(让连接mysql时候就使用utf-8)</li>
+<li>然后重启mysql 服务 cd /etc/init.d/mysql restart</li>
+</ul>
+
+
+<p>但是这样设置之后导致无法启动mysql服务。正确的配置应该是： </p>
+
+
+<p>[mysqld]处default-character-set=utf8应该改为 character-set-server = utf8 其他的不变；
+<br/>
+不过我的话还是有点小小的差异，我是在[client]处加入default-character-set=utf8而不是在[mysql]不过这个应该一样的。
+</p>
+
+
+<p>
+至此，完美解决无法在表单提交含有中文字符的数据问题。但是这个修改对已经创建的数据库是无效的，可以使用下面这个语句进行修改 alter database yourdatabase character set utf8; 
+</p>
+
+]]></content>
+  </entry>
+  
+</feed>

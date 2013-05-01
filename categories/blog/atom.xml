@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Blog | Hedgehog's Blog]]></title>
+  <link href="http://hedgehogZDH.github.io/categories/blog/atom.xml" rel="self"/>
+  <link href="http://hedgehogZDH.github.io/"/>
+  <updated>2013-05-01T16:44:11+08:00</updated>
+  <id>http://hedgehogZDH.github.io/</id>
+  <author>
+    <name><![CDATA[Zoey]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to build a Octopress Blog]]></title>
+    <link href="http://hedgehogZDH.github.io/blog/2013/04/30/how-to-build-a-octopress-blog/"/>
+    <updated>2013-04-30T11:26:00+08:00</updated>
+    <id>http://hedgehogZDH.github.io/blog/2013/04/30/how-to-build-a-octopress-blog</id>
+    <content type="html"><![CDATA[<p><blockquote><p>Last night I lay in bed looking up at the stars in the sky and I thought to myself, where the heck is the ceiling.</p></blockquote></p>
+
+<!-- more -->
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Time to be Awesome - awesome.java </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">import</span> <span class="nn">java.util.</span><span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">javax.swing.</span><span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><video width='640' height='320' preload='none' controls poster='http://s3.imathis.com/video/zero-to-fancy-buttons.png'><source src='http://s3.imathis.com/video/zero-to-fancy-buttons.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video></p>
+
+<p><span class='pullquote-right' data-pullquote='surround it like this'>
+Surround your paragraph with the pull quote tags. Then when you come to
+the text you want to pull, surround it like this and that's all there is to it.
+</span></p>
+
+<p>rake preview includes rake generate
+config.yml:  rake generate
+markdown file: rake preview once you edit it, it will go into effect right now</p>
+]]></content>
+  </entry>
+  
+</feed>

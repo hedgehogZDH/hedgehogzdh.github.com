@@ -4,7 +4,7 @@
   <title><![CDATA[Hedgehog's Blog]]></title>
   <link href="http://hedgehogZDH.github.io/atom.xml" rel="self"/>
   <link href="http://hedgehogZDH.github.io/"/>
-  <updated>2013-04-29T18:21:29+08:00</updated>
+  <updated>2013-05-01T16:44:11+08:00</updated>
   <id>http://hedgehogZDH.github.io/</id>
   <author>
     <name><![CDATA[Zoey]]></name>
@@ -14,11 +14,91 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Little Sheep Sheep]]></title>
+    <title type="html"><![CDATA[How to build a Octopress Blog]]></title>
+    <link href="http://hedgehogZDH.github.io/blog/2013/04/30/how-to-build-a-octopress-blog/"/>
+    <updated>2013-04-30T11:26:00+08:00</updated>
+    <id>http://hedgehogZDH.github.io/blog/2013/04/30/how-to-build-a-octopress-blog</id>
+    <content type="html"><![CDATA[<blockquote><p>Last night I lay in bed looking up at the stars in the sky and I thought to myself, where the heck is the ceiling.</p></blockquote>
+
+
+<!-- more -->
+
+
+
+
+<figure class='code'><figcaption><span>Time to be Awesome - awesome.java </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">javax.swing.*</span><span class="o">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><video width='640' height='320' preload='none' controls poster='http://s3.imathis.com/video/zero-to-fancy-buttons.png'><source src='http://s3.imathis.com/video/zero-to-fancy-buttons.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video></p>
+
+<p><span class='pullquote-right' data-pullquote='surround it like this'>
+Surround your paragraph with the pull quote tags. Then when you come to
+the text you want to pull, surround it like this and that&#8217;s all there is to it.
+</span></p>
+
+<p>rake preview includes rake generate
+config.yml:  rake generate
+markdown file: rake preview once you edit it, it will go into effect right now</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[解决mysql中文乱码问题]]></title>
     <link href="http://hedgehogZDH.github.io/blog/2013/04/29/little-sheep-sheep/"/>
     <updated>2013-04-29T18:16:00+08:00</updated>
     <id>http://hedgehogZDH.github.io/blog/2013/04/29/little-sheep-sheep</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<h2>问题描述</h2>
+
+
+<p>Play框架内置的数据库是h2数据库，由于个人喜好问题，我换成了mysql数据库，可参考官方文档 Importing a Database Driver 。换用数据库后最大的问题就是&#8211;mysql中文乱码问题。</p>
+
+
+<!-- more -->
+
+
+<p>换用mysql数据库后，在表单是提交不了中文字符的数据的，还会产生乱码 “？？？”。</p>
+
+
+<p>在mysql命令行工具中键入 $ \show variables like &#8220;%character%&#8221;; 可以得到mysql character 的数据。</p>
+
+
+<p>
+    但是在mysql workbench是可以插进中文字符的，键入上述命令，里面有一个结果是character_set_client utf8,所以呢，从客户端是可以插入中文字符的。
+但是character_set_server和database是latin1，这就是中文乱码的根本原因了，从play程序提交数据保存到mysql，是直接提交数据到server的，所以显示出来的就是 万恶的latin1编码 “？？？” 了.
+</p>
+
+
+<h2>解决方法</h2>
+
+
+<p>网上很多解决类似问题的都是：</p>
+
+
+<ul>
+<li>首先，编辑mysql配置文件:sudo gedit /etc/mysql/my.cnf (这个文件是只读的，所以前面要加权限才能编辑)</li>
+<li>然后，找到[mysql]加入 default-character-set=utf8（设置字符集为utf8）,找到[mysqld] 加入 default-character-set=utf8 和 init_connect=&#8217;SET NAMES utf8&#8217;(让连接mysql时候就使用utf-8)</li>
+<li>然后重启mysql 服务 cd /etc/init.d/mysql restart</li>
+</ul>
+
+
+<p>但是这样设置之后导致无法启动mysql服务。正确的配置应该是： </p>
+
+
+<p>[mysqld]处default-character-set=utf8应该改为 character-set-server = utf8 其他的不变；
+<br/>
+不过我的话还是有点小小的差异，我是在[client]处加入default-character-set=utf8而不是在[mysql]不过这个应该一样的。
+</p>
+
+
+<p>
+至此，完美解决无法在表单提交含有中文字符的数据问题。但是这个修改对已经创建的数据库是无效的，可以使用下面这个语句进行修改 alter database yourdatabase character set utf8; 
+</p>
+
 ]]></content>
   </entry>
   
