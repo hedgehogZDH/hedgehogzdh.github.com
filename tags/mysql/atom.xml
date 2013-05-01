@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: mysql | Hedgehog's Blog]]></title>
-  <link href="http://hedgehogZDH.github.io/categories/mysql/atom.xml" rel="self"/>
+  <title><![CDATA[Tag: mysql | Hedgehog's Blog]]></title>
+  <link href="http://hedgehogZDH.github.io/tags/mysql/atom.xml" rel="self"/>
   <link href="http://hedgehogZDH.github.io/"/>
   <updated>2013-05-01T18:45:34+08:00</updated>
   <id>http://hedgehogZDH.github.io/</id>
