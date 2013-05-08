@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Play | Hedgehog's Blog]]></title>
   <link href="http://hedgehogZDH.github.io/categories/play/atom.xml" rel="self"/>
   <link href="http://hedgehogZDH.github.io/"/>
-  <updated>2013-05-08T15:12:43+08:00</updated>
+  <updated>2013-05-08T15:31:50+08:00</updated>
   <id>http://hedgehogZDH.github.io/</id>
   <author>
     <name><![CDATA[Zoey]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[用Play! 2框架搭建自己的博客(0)]]></title>
-    <link href="http://hedgehogZDH.github.io/blog/2013/05/08/how-to-build-a-blog-using-play-framework/"/>
-    <updated>2013-05-08T14:33:00+08:00</updated>
-    <id>http://hedgehogZDH.github.io/blog/2013/05/08/how-to-build-a-blog-using-play-framework</id>
+    <link href="http://hedgehogZDH.github.io/blog/2013/04/08/how-to-build-a-blog-using-play-framework/"/>
+    <updated>2013-04-08T14:33:00+08:00</updated>
+    <id>http://hedgehogZDH.github.io/blog/2013/04/08/how-to-build-a-blog-using-play-framework</id>
     <content type="html"><![CDATA[<p>
 3月份的时候用Play! 2框架搭建了一个博客，包括前台和后台，但是由于没有合适的云平台可以放，又没mon买服务器，所以只能压箱底了...先po几张图
 </p>
@@ -31,15 +31,28 @@
 </p>
 
 
+<p>
+虽然界面有点丑(好吧，本人缺少美感),虽然功能很简单(只是实现了对文章的CRUD和分类的CRUD)，虽然还有很多要修改的东西......
+</p>
+
+
+<p>
+But，这是我是学了play!框架后完全自己做出来的东西，终于把理论转换为实践了。很开心很感动的其实～
+<span>
+（PS:因为play框架在国内并不流行，能找到的学习资料真少，不然就是旧版本的，学习的时候都是看play！官网上的文档，遇到问题也都只能stakoverflow，oschina上问或自己慢慢的尝试）
+</span>
+</p>
+
+
 <h2>主界面</h2>
 
 
-<p><img src="images/play/main.png"></p>
+<p><img src="http://hedgehogZDH.github.io/images/play/0/main.png"></p>
 
 <h2>后台界面</h2>
 
 
-<p><img src="images/play/admin.png"></p>
+<p><img src="http://hedgehogZDH.github.io/images/play/0/admin.png"></p>
 ]]></content>
   </entry>
   
