@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: octopress | Hedgehog's Blog]]></title>
+  <link href="http://hedgehogZDH.github.io/tags/octopress/atom.xml" rel="self"/>
+  <link href="http://hedgehogZDH.github.io/"/>
+  <updated>2013-05-08T15:12:43+08:00</updated>
+  <id>http://hedgehogZDH.github.io/</id>
+  <author>
+    <name><![CDATA[Zoey]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[如何搭建一个Octopress静态博客]]></title>
+    <link href="http://hedgehogZDH.github.io/blog/2013/04/30/how-to-build-a-octopress-blog/"/>
+    <updated>2013-04-30T11:26:00+08:00</updated>
+    <id>http://hedgehogZDH.github.io/blog/2013/04/30/how-to-build-a-octopress-blog</id>
+    <content type="html"><![CDATA[<p>rake preview includes rake generate
+config.yml:  rake generate
+markdown file: rake preview once you edit it, it will go into effect right now</p>
+]]></content>
+  </entry>
+  
+</feed>

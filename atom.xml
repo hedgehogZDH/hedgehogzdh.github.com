@@ -4,7 +4,7 @@
   <title><![CDATA[Hedgehog's Blog]]></title>
   <link href="http://hedgehogZDH.github.io/atom.xml" rel="self"/>
   <link href="http://hedgehogZDH.github.io/"/>
-  <updated>2013-05-01T18:50:31+08:00</updated>
+  <updated>2013-05-08T15:12:43+08:00</updated>
   <id>http://hedgehogZDH.github.io/</id>
   <author>
     <name><![CDATA[Zoey]]></name>
@@ -14,34 +14,41 @@
 
   
   <entry>
-    <title type="html"><![CDATA[How to build a Octopress Blog]]></title>
-    <link href="http://hedgehogZDH.github.io/blog/2013/04/30/how-to-build-a-octopress-blog/"/>
-    <updated>2013-04-30T11:26:00+08:00</updated>
-    <id>http://hedgehogZDH.github.io/blog/2013/04/30/how-to-build-a-octopress-blog</id>
-    <content type="html"><![CDATA[<blockquote><p>Last night I lay in bed looking up at the stars in the sky and I thought to myself, where the heck is the ceiling.</p></blockquote>
+    <title type="html"><![CDATA[用Play! 2框架搭建自己的博客(0)]]></title>
+    <link href="http://hedgehogZDH.github.io/blog/2013/05/08/how-to-build-a-blog-using-play-framework/"/>
+    <updated>2013-05-08T14:33:00+08:00</updated>
+    <id>http://hedgehogZDH.github.io/blog/2013/05/08/how-to-build-a-blog-using-play-framework</id>
+    <content type="html"><![CDATA[<p>
+3月份的时候用Play! 2框架搭建了一个博客，包括前台和后台，但是由于没有合适的云平台可以放，又没mon买服务器，所以只能压箱底了&#8230;先po几张图
+</p>
 
 
 <!-- more -->
 
 
+<p>
+技术架构：<a href="http://www.playframework.com/documentation/2.1.0/Home">Play! 2框架</a> + MySQL数据库 + Ebean ORM.
+</p>
 
 
-<figure class='code'><figcaption><span>Time to be Awesome - awesome.java </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">javax.swing.*</span><span class="o">;</span>
-</span></code></pre></td></tr></table></div></figure>
+<h2>主界面</h2>
 
 
-<p><video width='640' height='320' preload='none' controls poster='http://s3.imathis.com/video/zero-to-fancy-buttons.png'><source src='http://s3.imathis.com/video/zero-to-fancy-buttons.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></video></p>
+<p><img src="images/play/main.png"></p>
 
-<p><span class='pullquote-right' data-pullquote='surround it like this'>
-Surround your paragraph with the pull quote tags. Then when you come to
-the text you want to pull, surround it like this and that&#8217;s all there is to it.
-</span></p>
+<h2>后台界面</h2>
 
-<p>rake preview includes rake generate
+
+<p><img src="images/play/admin.png"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[如何搭建一个Octopress静态博客]]></title>
+    <link href="http://hedgehogZDH.github.io/blog/2013/04/30/how-to-build-a-octopress-blog/"/>
+    <updated>2013-04-30T11:26:00+08:00</updated>
+    <id>http://hedgehogZDH.github.io/blog/2013/04/30/how-to-build-a-octopress-blog</id>
+    <content type="html"><![CDATA[<p>rake preview includes rake generate
 config.yml:  rake generate
 markdown file: rake preview once you edit it, it will go into effect right now</p>
 ]]></content>
