@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: blog | Hedgehog's Blog]]></title>
   <link href="http://hedgehogZDH.github.io/tags/blog/atom.xml" rel="self"/>
   <link href="http://hedgehogZDH.github.io/"/>
-  <updated>2013-05-08T17:34:41+08:00</updated>
+  <updated>2013-05-08T17:43:16+08:00</updated>
   <id>http://hedgehogZDH.github.io/</id>
   <author>
     <name><![CDATA[Zoey]]></name>
@@ -19,7 +19,7 @@
     <updated>2013-05-08T16:34:00+08:00</updated>
     <id>http://hedgehogZDH.github.io/blog/2013/05/08/how-to-write-a-octopress-blog-post</id>
     <content type="html"><![CDATA[<p>
-继上篇博文<a href="#">如何搭建一个Octopress静态博客</a>，接下来是如何发表blog post(注：先cd到octopress文件夹下进行操作)...
+继上篇博文<a href="/blog/2013/04/30/how-to-build-a-octopress-blog/">如何搭建一个Octopress静态博客</a>，接下来是如何发表blog post(注：先cd到octopress文件夹下进行操作)...
 </p>
 
 
