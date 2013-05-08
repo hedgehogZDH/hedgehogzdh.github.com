@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: blog | Hedgehog's Blog]]></title>
   <link href="http://hedgehogZDH.github.io/tags/blog/atom.xml" rel="self"/>
   <link href="http://hedgehogZDH.github.io/"/>
-  <updated>2013-05-08T15:31:50+08:00</updated>
+  <updated>2013-05-08T17:34:41+08:00</updated>
   <id>http://hedgehogZDH.github.io/</id>
   <author>
     <name><![CDATA[Zoey]]></name>
@@ -14,11 +14,221 @@
 
   
   <entry>
+    <title type="html"><![CDATA[如何发表Octopress博文]]></title>
+    <link href="http://hedgehogZDH.github.io/blog/2013/05/08/how-to-write-a-octopress-blog-post/"/>
+    <updated>2013-05-08T16:34:00+08:00</updated>
+    <id>http://hedgehogZDH.github.io/blog/2013/05/08/how-to-write-a-octopress-blog-post</id>
+    <content type="html"><![CDATA[<p>
+继上篇博文<a href="#">如何搭建一个Octopress静态博客</a>，接下来是如何发表blog post(注：先cd到octopress文件夹下进行操作)...
+</p>
+
+
+<!-- more -->
+
+
+<h2>Blog posts</h2>
+
+
+<div>
+    观察octopress安装目录(~/octopress/)下的文件:
+    <img src="http://hedgehogZDH.github.io/images/octopress/0/octopress.png">
+<br/>
+source文件夹为本地编辑的文件的存放目录，其中_posts文件夹用来存放发布的post，每篇post都是以Jekyll命名规范来命名的: YYYY-MM-DD-post-title.markdown，更多规则请看<a href="http://jekyllrb.com/docs/permalinks/">permalinks</a>和<a href="http://jekyllrb.com/docs/frontmatter/">frontmatter</a>.
+通过
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["title"]</span></code></pre></td></tr></table></div></figure></notextile></div>可以生成一篇新文章
+举个栗子：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["Hello world"]
+</span><span class='line'># Creates source/_posts/2013-04-30-hello-world.markdown</span></code></pre></td></tr></table></div></figure></notextile></div>
+观察新建的这个markdown文件：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>---
+</span><span class='line'>layout: post
+</span><span class='line'>title: "Hello world"
+</span><span class='line'>date: 2013-04-30 15:59
+</span><span class='line'>comments: true
+</span><span class='line'>external-url:
+</span><span class='line'>categories:
+</span><span class='line'>---</span></code></pre></td></tr></table></div></figure></notextile></div>
+修改目录：
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># One category
+</span><span class='line'>categories: Sass
+</span><span class='line'>
+</span><span class='line'># Multiple categories example 1
+</span><span class='line'>categories: [CSS3, Sass, Media Queries]
+</span><span class='line'>
+</span><span class='line'># Multiple categories example 2
+</span><span class='line'>categories:
+</span><span class='line'>- CSS3
+</span><span class='line'>- Sass
+</span><span class='line'>- Media Queries</span></code></pre></td></tr></table></div></figure></notextile></div>
+补充：
+在每篇博文下面会有一个 Tweet 链接，如果要把它去掉可以在markdown文件的---区域加入 sharing: false
+        </div>
+
+
+
+
+<h2>New Pages</h2>
+
+
+<pre><code>    &lt;div&gt;
+</code></pre>
+
+<p>在Jekyll中，可以任意增加新的页面，其URL会和文件路径相对应 也就是说 about.markdown 会变成 site.com/about.html
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_page[super-awesome]&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>creates /source/super-awesome/index.markdown&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>rake new_page[super-awesome/page.html]&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>creates /source/super-awesome/page.html&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<pre><code>    &lt;/div&gt;
+</code></pre>
+
+<h2>博文内容</h2>
+
+
+<p>
+在---区域的下面，可以随意插入html的标签，文字，但是，Jekyll自带的<a href="https://github.com/Shopify/liquid/wiki/Liquid-for-Designers">liquid template</a>可以帮助快速生成特定逻辑的格式，比如if-else,for循环等.
+另外，也可以插入Octopress的插件支持的html5 video tag和codeblock等.详见Octopress官网文档.
+<br/>
+插入 <!-- more --> 可以使其下的内容不在首页直接显示，而是得通过一个 “Continue →” 按钮进入全文阅读（PS：按钮可以在_config.yml中通过修改 excerpt_link进行自定义, 例如：excerpt_link: "阅读全文 &gt;&gt;"）
+</p>
+
+
+
+
+<h2>生成&&发表</h2>
+
+
+<p>
+    回到octopress文件夹，source文件夹为本地编辑的文件的存放目录,为什么是“编辑”呢，当通过rake new_post["title"] 新建post或 rake new_page[about]时，之后的编辑都是对source文件夹的影响.
+<br/>
+如何“保存”编辑后的页面效果呢?这得在terminal输入rake generate使其更新到public文件夹中，观察terminal，每次generate时，都会有source -> public
+<img src="http://hedgehogZDH.github.io/images/octopress/1/generate.png">
+<br/>
+观察public/blog，之前编辑好的文件已经转换为html页面了。若想查看页面效果，
+在terminal输入rake preview(事实上，preview操作包含了rake generate操作).
+<br/>
+打开浏览器,输入http://localhost:4000/ 即可查看效果。此时再对source中的post进行修改，是可以在浏览器马上看到修改效果的.
+<br/>
+如何发布到github上呢? 在terminal输入 rake deploy即可，此时public 文件夹中的内容会更新到_deploy文件夹中.
+<h3>
+因此，source文件夹用于"编辑"，public用于"保存",_deploy用于"发布"。
+</h3>
+</p>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[如何搭建一个Octopress静态博客]]></title>
     <link href="http://hedgehogZDH.github.io/blog/2013/04/30/how-to-build-a-octopress-blog/"/>
     <updated>2013-04-30T11:26:00+08:00</updated>
     <id>http://hedgehogZDH.github.io/blog/2013/04/30/how-to-build-a-octopress-blog</id>
-    <content type="html"><![CDATA[<p>rake preview includes rake generate
+    <content type="html"><![CDATA[<p>
+    <a href="http://octopress.org/">Octopress</a>是一个基于<a href="http://jekyllrb.com/">Jekyll</a>的静态博客框架，使用Jekyll搭建静态博客，需要自己编写html模板，css，js，还得自己配置路径什么的（example:<a href="http://kidlet.org/">Kidlet</a>此博客就是使用Jekyll搭建的）。Octopress框架则免去这些繁琐的事，只要使用几条命令即可快速以完成一篇具有特定样式的博文。写代码般写博文，是不是很geek...
+</p>
+
+
+<!-- more -->
+
+
+<ol>
+    <li>安装git
+        <p>
+            <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install git-core</span></code></pre></td></tr></table></div></figure></notextile></div>
+            <br/>
+            配置git：
+            <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git config --global user.name "Your Name"
+</span><span class='line'>$ git config --global user.email your-email@address.com</span></code></pre></td></tr></table></div></figure></notextile></div>
+            <br/>
+            查看git版本：
+            <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git --version</span></code></pre></td></tr></table></div></figure></notextile></div>
+            安装配置成功。
+        </p>
+    </li>
+
+    <li>安装rvm环境
+        <p>
+            Jekyll和Octopress其实都是rvm的一个gem，所以安装Octopress之前一定要先安装了rvm,<a href="http://kidlet.sinaapp.com/blog/archives/205.html">推荐链接1</a> or <a href="http://www.cnblogs.com/keen-allan/archive/2012/04/22/2464541.html">推荐链接2</a>.
+        </p>
+    </li>
+
+    <li>安装Octopress（Ubuntu 12.04 下）
+        <p>
+            <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git octopress
+</span><span class='line'>cd octopress    # If you use RVM, You'll be asked if you trust the .rvmrc file (say yes).
+</span><span class='line'>ruby --version  # Should report Ruby 1.9.3</span></code></pre></td></tr></table></div></figure></notextile></div>
+            <br/>
+            安装独立组件：
+            <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install bundler
+</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure></notextile></div>
+            <br/>
+            安装Octepress的默认主题：
+            <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake install</span></code></pre></td></tr></table></div></figure></notextile></div>
+            
+        </p>
+    </li>
+
+    <li>
+<a href="http://octopress.org/docs/deploying/github/">发布到Github pages上</a>
+    </li>
+    <li>
+<a href="http://octopress.org/docs/configuring/">配置Octopress博客</a>
+        <p>
+            Octopress有很多<a href="https://github.com/imathis/octopress/wiki/3rd-party-plugins">第三方插件</a>，可以修改默认主题，更改默认配置等.
+        </p>
+    </li>
+</ol>
+
+
+<p>rake preview includes rake generate
 config.yml:  rake generate
 markdown file: rake preview once you edit it, it will go into effect right now</p>
 ]]></content>

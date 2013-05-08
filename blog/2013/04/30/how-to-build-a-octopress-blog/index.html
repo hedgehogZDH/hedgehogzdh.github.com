@@ -9,10 +9,7 @@
   <meta name="author" content="Zoey">
 
   
-  <meta name="description" content="rake preview includes rake generate
-config.yml: rake generate
-markdown file: rake preview once you edit it, it will go into effect right now
-">
+  <meta name="description" content="Octopress是一个基于Jekyll的静态博客框架，使用Jekyll搭建静态博客，需要自己编写html模板，css，js，还得自己配置路径什么的（example:Kidlet此博客就是使用Jekyll搭建的）。Octopress框架则免去这些繁琐的事， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -95,7 +92,86 @@ markdown file: rake preview once you edit it, it will go into effect right now
   </header>
 
 
-<div class="entry-content"><p>rake preview includes rake generate
+<div class="entry-content"><p>
+    <a href="http://octopress.org/">Octopress</a>是一个基于<a href="http://jekyllrb.com/">Jekyll</a>的静态博客框架，使用Jekyll搭建静态博客，需要自己编写html模板，css，js，还得自己配置路径什么的（example:<a href="http://kidlet.org/">Kidlet</a>此博客就是使用Jekyll搭建的）。Octopress框架则免去这些繁琐的事，只要使用几条命令即可快速以完成一篇具有特定样式的博文。写代码般写博文，是不是很geek&#8230;
+</p>
+
+
+<!-- more -->
+
+
+<ol>
+    <li>安装git
+        <p>
+            
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install git-core</span></code></pre></td></tr></table></div></figure>
+
+            <br/>
+            配置git：
+            
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git config --global user.name "Your Name"
+</span><span class='line'>$ git config --global user.email your-email@address.com</span></code></pre></td></tr></table></div></figure>
+
+            <br/>
+            查看git版本：
+            
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git --version</span></code></pre></td></tr></table></div></figure>
+
+            安装配置成功。
+        </p>
+    </li>
+
+    <li>安装rvm环境
+        <p>
+            Jekyll和Octopress其实都是rvm的一个gem，所以安装Octopress之前一定要先安装了rvm,<a href="http://kidlet.sinaapp.com/blog/archives/205.html">推荐链接1</a> or <a href="http://www.cnblogs.com/keen-allan/archive/2012/04/22/2464541.html">推荐链接2</a>.
+        </p>
+    </li>
+
+    <li>安装Octopress（Ubuntu 12.04 下）
+        <p>
+            
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git octopress
+</span><span class='line'>cd octopress    # If you use RVM, You'll be asked if you trust the .rvmrc file (say yes).
+</span><span class='line'>ruby --version  # Should report Ruby 1.9.3</span></code></pre></td></tr></table></div></figure>
+
+            <br/>
+            安装独立组件：
+            
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install bundler
+</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
+
+            <br/>
+            安装Octepress的默认主题：
+            
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
+
+            
+        </p>
+    </li>
+
+    <li>
+<a href="http://octopress.org/docs/deploying/github/">发布到Github pages上</a>
+    </li>
+    <li>
+<a href="http://octopress.org/docs/configuring/">配置Octopress博客</a>
+        <p>
+            Octopress有很多<a href="https://github.com/imathis/octopress/wiki/3rd-party-plugins">第三方插件</a>，可以修改默认主题，更改默认配置等.
+        </p>
+    </li>
+</ol>
+
+
+<p>rake preview includes rake generate
 config.yml:  rake generate
 markdown file: rake preview once you edit it, it will go into effect right now</p>
 </div>
@@ -149,6 +225,8 @@ Tags:
         <a class="basic-alignment left" href="/blog/2013/04/29/little-sheep-sheep/" title="Previous Post: 解决mysql中文乱码问题">&laquo; 解决mysql中文乱码问题</a>
       
       
+        <a class="basic-alignment right" href="/blog/2013/05/08/how-to-write-a-octopress-blog-post/" title="Next Post: 如何发表Octopress博文">如何发表Octopress博文 &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -176,7 +254,7 @@ Tags:
 			</li>
 		
 			<li class="category">
-				<a href="/categories/octopress">Octopress (1)</a>
+				<a href="/categories/octopress">Octopress (2)</a>
 			</li>
 		
 	</ul>
@@ -189,7 +267,7 @@ Tags:
 			</span>
 		
 			<span class="tag">
-				<a href="/tags/blog">blog (2)</a>
+				<a href="/tags/blog">blog (3)</a>
 			</span>
 		
 			<span class="tag">
@@ -197,13 +275,17 @@ Tags:
 			</span>
 		
 			<span class="tag">
-				<a href="/tags/octopress">octopress (1)</a>
+				<a href="/tags/octopress">octopress (2)</a>
 			</span>
 		
 	</ul>
 </section><section>
   <h1>最新文章</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/05/08/how-to-write-a-octopress-blog-post/">如何发表Octopress博文</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/04/30/how-to-build-a-octopress-blog/">如何搭建一个Octopress静态博客</a>

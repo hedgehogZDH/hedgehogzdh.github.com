@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>如何发表Octopress博文 - Hedgehog's Blog</title>
+  <meta name="author" content="Zoey">
+
+  
+  <meta name="description" content="继上篇博文如何搭建一个Octopress静态博客，接下来是如何发表blog post(注：先cd到octopress文件夹下进行操作)&#8230; Blog posts 观察octopress安装目录(~/octopress/)下的文件: source文件夹为本地编辑的文件的存放目录， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://hedgehogZDH.github.io/blog/2013/05/08/how-to-write-a-octopress-blog-post">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Hedgehog's Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Hedgehog's Blog</a></h1>
+  
+    <h2>To be a simple hedgehog.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:hedgehogZDH.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">如何发表Octopress博文</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-08T16:34:00+08:00" pubdate data-updated="true">May 8<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>
+继上篇博文<a href="#">如何搭建一个Octopress静态博客</a>，接下来是如何发表blog post(注：先cd到octopress文件夹下进行操作)&#8230;
+</p>
+
+
+<!-- more -->
+
+
+<h2>Blog posts</h2>
+
+
+<div>
+    观察octopress安装目录(~/octopress/)下的文件:
+    <img src="/images/octopress/0/octopress.png">
+<br/>
+source文件夹为本地编辑的文件的存放目录，其中_posts文件夹用来存放发布的post，每篇post都是以Jekyll命名规范来命名的: YYYY-MM-DD-post-title.markdown，更多规则请看<a href="http://jekyllrb.com/docs/permalinks/">permalinks</a>和<a href="http://jekyllrb.com/docs/frontmatter/">frontmatter</a>.
+通过
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["title"]</span></code></pre></td></tr></table></div></figure>
+可以生成一篇新文章
+举个栗子：
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["Hello world"]
+</span><span class='line'># Creates source/_posts/2013-04-30-hello-world.markdown</span></code></pre></td></tr></table></div></figure>
+
+观察新建的这个markdown文件：
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>---
+</span><span class='line'>layout: post
+</span><span class='line'>title: "Hello world"
+</span><span class='line'>date: 2013-04-30 15:59
+</span><span class='line'>comments: true
+</span><span class='line'>external-url:
+</span><span class='line'>categories:
+</span><span class='line'>---</span></code></pre></td></tr></table></div></figure>
+
+修改目录：
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># One category
+</span><span class='line'>categories: Sass
+</span><span class='line'>
+</span><span class='line'># Multiple categories example 1
+</span><span class='line'>categories: [CSS3, Sass, Media Queries]
+</span><span class='line'>
+</span><span class='line'># Multiple categories example 2
+</span><span class='line'>categories:
+</span><span class='line'>- CSS3
+</span><span class='line'>- Sass
+</span><span class='line'>- Media Queries</span></code></pre></td></tr></table></div></figure>
+
+补充：
+在每篇博文下面会有一个 Tweet 链接，如果要把它去掉可以在markdown文件的&#8212;区域加入 sharing: false
+        </div>
+
+
+
+
+<h2>New Pages</h2>
+
+
+<pre><code>    &lt;div&gt;
+</code></pre>
+
+<p>在Jekyll中，可以任意增加新的页面，其URL会和文件路径相对应 也就是说 about.markdown 会变成 site.com/about.html</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_page[super-awesome]
+</span><span class='line'># creates /source/super-awesome/index.markdown
+</span><span class='line'>
+</span><span class='line'>rake new_page[super-awesome/page.html]
+</span><span class='line'># creates /source/super-awesome/page.html</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>    &lt;/div&gt;
+</code></pre>
+
+<h2>博文内容</h2>
+
+
+<p>
+在&#8212;区域的下面，可以随意插入html的标签，文字，但是，Jekyll自带的<a href="https://github.com/Shopify/liquid/wiki/Liquid-for-Designers">liquid template</a>可以帮助快速生成特定逻辑的格式，比如if-else,for循环等.
+另外，也可以插入Octopress的插件支持的html5 video tag和codeblock等.详见Octopress官网文档.
+<br/>
+插入 <!-- more --> 可以使其下的内容不在首页直接显示，而是得通过一个 “Continue →” 按钮进入全文阅读（PS：按钮可以在_config.yml中通过修改 excerpt_link进行自定义, 例如：excerpt_link: &#8220;阅读全文 &gt;&gt;&#8221;）
+</p>
+
+
+
+
+<h2>生成&&发表</h2>
+
+
+<p>
+    回到octopress文件夹，source文件夹为本地编辑的文件的存放目录,为什么是“编辑”呢，当通过rake new_post[&#8220;title&#8221;] 新建post或 rake new_page[about]时，之后的编辑都是对source文件夹的影响.
+<br/>
+如何“保存”编辑后的页面效果呢?这得在terminal输入rake generate使其更新到public文件夹中，观察terminal，每次generate时，都会有source -> public
+<img src="/images/octopress/1/generate.png">
+<br/>
+观察public/blog，之前编辑好的文件已经转换为html页面了。若想查看页面效果，
+在terminal输入rake preview(事实上，preview操作包含了rake generate操作).
+<br/>
+打开浏览器,输入http://localhost:4000/ 即可查看效果。此时再对source中的post进行修改，是可以在浏览器马上看到修改效果的.
+<br/>
+如何发布到github上呢? 在terminal输入 rake deploy即可，此时public 文件夹中的内容会更新到_deploy文件夹中.
+<h3>
+因此，source文件夹用于&#8221;编辑&#8221;，public用于&#8221;保存&#8221;,_deploy用于&#8221;发布&#8221;。
+</h3>
+</p>
+
+
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Zoey</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-08T16:34:00+08:00" pubdate data-updated="true">May 8<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/categories/octopress/'>Octopress</a>
+  
+</span>
+
+
+      
+
+<p>
+Tags:
+<span class="tag">
+  
+    <a class='tag' href='/tags/blog/'>blog</a>, <a class='tag' href='/tags/octopress/'>octopress</a>
+  
+</span>
+</p>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hedgehogZDH.github.io/blog/2013/05/08/how-to-write-a-octopress-blog-post/" data-via="" data-counturl="http://hedgehogZDH.github.io/blog/2013/05/08/how-to-write-a-octopress-blog-post/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/04/30/how-to-build-a-octopress-blog/" title="Previous Post: 如何搭建一个Octopress静态博客">&laquo; 如何搭建一个Octopress静态博客</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+	<h1>文章分类</h1>
+	<ul>
+		
+			<li class="category">
+				<a href="/categories/play">Play (1)</a>
+			</li>
+		
+			<li class="category">
+				<a href="/categories/mysql">MySQL (1)</a>
+			</li>
+		
+			<li class="category">
+				<a href="/categories/octopress">Octopress (2)</a>
+			</li>
+		
+	</ul>
+</section><section>
+	<h1>标签</h1>
+	<ul>
+		
+			<span class="tag">
+				<a href="/tags/play2">play2 (2)</a>
+			</span>
+		
+			<span class="tag">
+				<a href="/tags/blog">blog (3)</a>
+			</span>
+		
+			<span class="tag">
+				<a href="/tags/mysql">mysql (1)</a>
+			</span>
+		
+			<span class="tag">
+				<a href="/tags/octopress">octopress (2)</a>
+			</span>
+		
+	</ul>
+</section><section>
+  <h1>最新文章</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/05/08/how-to-write-a-octopress-blog-post/">如何发表Octopress博文</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/30/how-to-build-a-octopress-blog/">如何搭建一个Octopress静态博客</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/29/little-sheep-sheep/">解决mysql中文乱码问题</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/08/how-to-build-a-blog-using-play-framework/">用Play! 2框架搭建自己的博客(0)</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>链接</h1>
+  <ul>
+  	<li><a href="http://kidlet.org/">Kidlet</a></li>
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Zoey -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'hedgehogzdh';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://hedgehogZDH.github.io/blog/2013/05/08/how-to-write-a-octopress-blog-post/';
+        var disqus_url = 'http://hedgehogZDH.github.io/blog/2013/05/08/how-to-write-a-octopress-blog-post/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
